@@ -1,9 +1,14 @@
 {% extends 'base.html' %} {% block content %}
-<h1 class="text-center mb-3">Poll Questions</h1>
+<h1 class="text-center mb-3">Trains available</h1>
 {% if latest_question_list %} {% for question in latest_question_list %}
 <div class="card mb-3">
   <div class="card-body">
     <p class="lead">{{ question.question_text }}</p>
+    <p>Journey date : <strong>{{question.pub_date}}</strong></p>
+    <p class="text-primary">
+      Journey from <strong>{{question.source}}</strong> to
+      <strong>{{question.destination}}</strong>
+    </p>
     <a
       href="{% url 'polls:detail' question.id %}"
       class="btn btn-primary btn-sm"

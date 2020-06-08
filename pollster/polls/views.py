@@ -43,8 +43,8 @@ def vote(request, question_id):
             'question': question,
             'error_message': "Please select another choice",
         })
-
         selected_choice.save()
+
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
